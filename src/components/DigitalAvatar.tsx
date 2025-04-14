@@ -33,35 +33,17 @@ const DigitalAvatar: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center p-6 max-w-md mx-auto">
-      <div className="relative w-48 h-48 mb-6">
-        <motion.div
-          className="w-full h-full bg-gradient-blue-purple rounded-full flex items-center justify-center shadow-xl"
-          animate={{ scale: speaking ? [1, 1.05, 1] : 1 }}
-          transition={{ repeat: speaking ? Infinity : 0, duration: 1.5 }}
-        >
-          <motion.div
-            className="text-white text-6xl font-bold"
-            animate={{ 
-              rotate: speaking ? [0, 5, -5, 0] : 0
-            }}
-            transition={{ repeat: speaking ? Infinity : 0, duration: 2 }}
-          >
-            FW
-          </motion.div>
-        </motion.div>
-        
-        {/* Hand wave animation */}
-        <motion.div 
-          className="absolute -bottom-2 -right-2 text-3xl"
-          animate={{ rotate: speaking ? [0, 14, -8, 14, -4, 10, 0] : 0 }}
-          transition={{ repeat: speaking ? Infinity : 0, duration: 2.5, repeatDelay: 1 }}
-        >
-          👋
-        </motion.div>
+    <div className="flex flex-col items-center justify-center p-6 max-w-3xl mx-auto">
+      <div className="w-full aspect-video mb-6 rounded-lg overflow-hidden shadow-xl">
+        <iframe 
+          src="https://build.nvidia.com/nvidia/digital-humans-for-customer-service" 
+          className="w-full h-full border-0"
+          title="NVIDIA Digital Human Demo"
+          allowFullScreen
+        ></iframe>
       </div>
 
-      <div className="bg-white shadow-blue rounded-lg p-4 mb-6 text-center">
+      <div className="bg-white shadow-blue rounded-lg p-4 mb-6 text-center w-full">
         <p className="text-lg font-medium">{greeting}</p>
       </div>
 
