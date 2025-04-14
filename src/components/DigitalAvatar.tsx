@@ -2,12 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Volume2, VolumeX } from 'lucide-react';
+import { Volume2, VolumeX, ExternalLink } from 'lucide-react';
 
 const DigitalAvatar: React.FC = () => {
   const [speaking, setSpeaking] = useState(false);
   const [muted, setMuted] = useState(false);
   const [greeting, setGreeting] = useState("Hey there, welcome to FWApp! I'm here to help you get started.");
+  const [iframeError, setIframeError] = useState(false);
 
   const startSpeaking = () => {
     if (muted) return;
@@ -34,14 +35,54 @@ const DigitalAvatar: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center p-6 max-w-3xl mx-auto">
-      <div className="w-full aspect-video mb-6 rounded-lg overflow-hidden shadow-xl">
-        <iframe 
-          src="https://build.nvidia.com/nvidia/digital-humans-for-customer-service" 
-          className="w-full h-full border-0"
-          title="NVIDIA Digital Human Demo"
-          allowFullScreen
-        ></iframe>
-      </div>
+      {iframeError ? (
+        // Fallback UI when iframe can't load
+        <div className="w-full aspect-video mb-6 rounded-lg overflow-hidden shadow-xl bg-gradient-blue-purple flex flex-col items-center justify-center text-white p-6">
+          <motion.div
+            className="text-5xl mb-4"
+            animate={{ rotate: speaking ? [0, 5, -5, 0] : 0 }}
+            transition={{ repeat: speaking ? Infinity : 0, duration: 2 }}
+          >
+            👋
+          </motion.div>
+          <h2 className="text-2xl font-bold mb-3">Digital Human Assistant</h2>
+          <p className="text-center mb-4">
+            Due to security restrictions, we can't embed the NVIDIA Digital Human demo directly.
+          </p>
+          <Button 
+            variant="outline" 
+            className="bg-white/20 hover:bg-white/30 text-white border-white"
+            onClick={() => window.open('https://build.nvidia.com/nvidia/digital-humans-for-customer-service', '_blank')}
+          >
+            <ExternalLink className="mr-2 h-4 w-4" />
+            Open NVIDIA Digital Human Demo
+          </Button>
+        </div>
+      ) : (
+        // Attempt to load iframe, but with onError handler
+        <div className="w-full aspect-video mb-6 rounded-lg overflow-hidden shadow-xl">
+          <iframe 
+            src="https://build.nvidia.com/nvidia/digital-humans-for-customer-service" 
+            className="w-full h-full border-0"
+            title="NVIDIA Digital Human Demo"
+            allowFullScreen
+            onError={() => setIframeError(true)}
+            onLoad={(e) => {
+              // Check if iframe loaded successfully
+              try {
+                // This will throw an error if cross-origin
+                const contentDocument = (e.target as HTMLIFrameElement).contentDocument;
+                if (!contentDocument) {
+                  setIframeError(true);
+                }
+              } catch (error) {
+                console.log("Cross-origin frame detected, may not load properly");
+                // We don't set error here as sometimes frames load despite CSP console errors
+              }
+            }}
+          />
+        </div>
+      )}
 
       <div className="bg-white shadow-blue rounded-lg p-4 mb-6 text-center w-full">
         <p className="text-lg font-medium">{greeting}</p>
