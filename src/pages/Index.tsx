@@ -90,7 +90,7 @@ const Index = () => {
         </section>
         
         <section className="py-10 container mx-auto px-4">
-          <h2 className="text-2xl font-semibold mb-6 text-center">How Aptiv8 Helps Workers</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-center">How Aptiv8 FWApp Helps Workers</h2>
           
           <Tabs defaultValue="job-seeking" className="max-w-3xl mx-auto">
             <TabsList className="grid w-full grid-cols-3">
