@@ -18,7 +18,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <img 
-            src="/lovable-uploads/d29e4fbe-d629-4acf-a8d5-aaedf1599d44.png" 
+            src="/lovable-uploads/ba9f46ce-9ea7-4c4a-95ca-400b94acca20.png" 
             alt="Aptiv8 Logo" 
             className="h-10 w-auto" 
             onClick={() => navigate('/')}
