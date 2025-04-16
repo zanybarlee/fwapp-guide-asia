@@ -15,7 +15,7 @@ const TransactionsPage = () => {
             <ShoppingBag className="h-6 w-6 text-aptiv8-red" />
           </div>
           
-          <h1 className="text-2xl md:text-3xl font-bold mb-2">Shop & Services</h1>
+          <h1 className="text-2xl md:text-3xl font-bold mb-2 text-gradient-red">Shop & Services</h1>
           <p className="text-gray-600 max-w-xl mx-auto">
             Purchase mobile top-ups, transit cards, and other essential services for your stay in Singapore.
           </p>

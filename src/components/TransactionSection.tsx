@@ -147,7 +147,7 @@ const TransactionSection: React.FC = () => {
 
   return (
     <div className="container max-w-4xl mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-6 text-center text-gradient-blue-purple">FWApp Shop</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center text-gradient-red">FWApp Shop</h2>
       
       <div className="grid md:grid-cols-3 gap-6">
         <div className="md:col-span-2">
@@ -190,7 +190,7 @@ const TransactionSection: React.FC = () => {
                     <CardFooter>
                       <Button 
                         onClick={() => addToCart(product)}
-                        className="w-full bg-fwapp-blue hover:bg-blue-700"
+                        className="w-full bg-aptiv8-red hover:bg-aptiv8-red/90"
                       >
                         Add to Cart
                       </Button>
@@ -206,7 +206,7 @@ const TransactionSection: React.FC = () => {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <ShoppingBag className="h-5 w-5" />
+                <ShoppingBag className="h-5 w-5 text-aptiv8-red" />
                 <span>Your Cart</span>
               </CardTitle>
               <CardDescription>
@@ -272,7 +272,7 @@ const TransactionSection: React.FC = () => {
             </CardContent>
             <CardFooter>
               <Button 
-                className="w-full bg-gradient-blue-purple hover:opacity-90"
+                className="w-full bg-gradient-red hover:opacity-90"
                 disabled={cart.length === 0 || isCheckingOut}
                 onClick={handleCheckout}
               >
