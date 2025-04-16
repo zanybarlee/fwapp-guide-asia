@@ -36,7 +36,7 @@ const DigitalAvatar: React.FC = () => {
         <div className="absolute inset-0 w-full h-full">
           <img src="/lovable-uploads/5eff63e3-9241-400a-9c0c-095c0e66704a.png" alt="Digital Human Background" className="w-full h-full object-cover opacity-80" />
           {/* Semi-transparent overlay */}
-          <div className="absolute inset-0 bg-gradient-blue-purple opacity-70"></div>
+          <div className="absolute inset-0 bg-gradient-blue-purple opacity-0"></div>
         </div>
         
         {/* Content positioned on top of the background */}
