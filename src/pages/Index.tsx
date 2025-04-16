@@ -16,11 +16,11 @@ const Index = () => {
       <Header />
       
       <main className="flex-1">
-        <section className="py-6 md:py-12 bg-gradient-to-b from-fwapp-lightblue to-white">
+        <section className="py-6 md:py-12 bg-gradient-to-b from-aptiv8-lightred to-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-8">
-              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gradient-blue-purple">
-                Welcome to FWApp
+              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gradient-red">
+                Welcome to Aptiv8
               </h1>
               <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                 Your all-in-one companion for foreign workers in Asia. Get assistance with jobs, 
@@ -31,24 +31,24 @@ const Index = () => {
             <DigitalAvatar />
             
             <div className="mt-12 max-w-4xl mx-auto">
-              <h2 className="text-2xl font-semibold mb-6 text-center">Explore FWApp Features</h2>
+              <h2 className="text-2xl font-semibold mb-6 text-center">Explore Aptiv8 Features</h2>
               
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="hover:shadow-md transition-all">
                   <CardHeader className="pb-2">
                     <CardTitle className="flex items-center gap-2">
-                      <Users className="h-5 w-5 text-fwapp-blue" />
+                      <Users className="h-5 w-5 text-aptiv8-red" />
                       <span>Digital Assistant</span>
                     </CardTitle>
                     <CardDescription>Get personalized help</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-gray-600 mb-4">
-                      Our friendly digital avatar guides you through FWApp and answers your questions.
+                      Our friendly digital avatar guides you through Aptiv8 and answers your questions.
                     </p>
                     <Button 
                       variant="outline" 
-                      className="w-full text-fwapp-blue border-fwapp-blue hover:bg-fwapp-lightblue" 
+                      className="w-full text-aptiv8-red border-aptiv8-red hover:bg-aptiv8-lightred" 
                       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                     >
                       Try Now <ChevronRight className="h-4 w-4 ml-1" />
@@ -59,7 +59,7 @@ const Index = () => {
                 <Card className="hover:shadow-md transition-all">
                   <CardHeader className="pb-2">
                     <CardTitle className="flex items-center gap-2">
-                      <Languages className="h-5 w-5 text-fwapp-purple" />
+                      <Languages className="h-5 w-5 text-aptiv8-red" />
                       <span>Voice Agent</span>
                     </CardTitle>
                     <CardDescription>Talk in your language</CardDescription>
@@ -70,7 +70,7 @@ const Index = () => {
                     </p>
                     <Button 
                       variant="outline" 
-                      className="w-full text-fwapp-purple border-fwapp-purple hover:bg-fwapp-lightblue"
+                      className="w-full text-aptiv8-red border-aptiv8-red hover:bg-aptiv8-lightred"
                       onClick={() => navigate('/voice-agent')}
                     >
                       Try Voice Agent <ChevronRight className="h-4 w-4 ml-1" />
@@ -81,7 +81,7 @@ const Index = () => {
                 <Card className="hover:shadow-md transition-all">
                   <CardHeader className="pb-2">
                     <CardTitle className="flex items-center gap-2">
-                      <Info className="h-5 w-5 text-fwapp-indigo" />
+                      <Info className="h-5 w-5 text-aptiv8-red" />
                       <span>Shop & Services</span>
                     </CardTitle>
                     <CardDescription>Buy what you need</CardDescription>
@@ -92,7 +92,7 @@ const Index = () => {
                     </p>
                     <Button 
                       variant="outline" 
-                      className="w-full text-fwapp-indigo border-fwapp-indigo hover:bg-fwapp-lightblue"
+                      className="w-full text-aptiv8-red border-aptiv8-red hover:bg-aptiv8-lightred"
                       onClick={() => navigate('/transactions')}
                     >
                       Go to Shop <ChevronRight className="h-4 w-4 ml-1" />
@@ -105,7 +105,7 @@ const Index = () => {
         </section>
         
         <section className="py-10 container mx-auto px-4">
-          <h2 className="text-2xl font-semibold mb-6 text-center">How FWApp Helps Workers</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-center">How Aptiv8 Helps Workers</h2>
           
           <Tabs defaultValue="job-seeking" className="max-w-3xl mx-auto">
             <TabsList className="grid w-full grid-cols-3">
@@ -119,7 +119,7 @@ const Index = () => {
                 <CardHeader>
                   <CardTitle>Find Your Next Job</CardTitle>
                   <CardDescription>
-                    FWApp connects workers with trusted employers
+                    Aptiv8 connects workers with trusted employers
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -163,7 +163,7 @@ const Index = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p>FWApp provides critical support:</p>
+                  <p>Aptiv8 provides critical support:</p>
                   <ul className="list-disc list-inside space-y-2 text-gray-700">
                     <li>Healthcare information and access</li>
                     <li>Legal advice and document assistance</li>

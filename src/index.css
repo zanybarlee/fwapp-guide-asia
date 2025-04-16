@@ -110,3 +110,20 @@
 .shadow-blue {
   box-shadow: 0 4px 14px rgba(74, 111, 255, 0.25);
 }
+
+/* New Aptiv8 Styles */
+.bg-gradient-red {
+  background: linear-gradient(135deg, #ea384c 0%, #f5878b 100%);
+}
+
+.text-gradient-red {
+  background: linear-gradient(135deg, #ea384c 0%, #f5878b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.shadow-red {
+  box-shadow: 0 4px 14px rgba(234, 56, 76, 0.25);
+}

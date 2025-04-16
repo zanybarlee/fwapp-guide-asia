@@ -68,6 +68,10 @@ export default {
 					purple: '#9B87F5',
 					indigo: '#6366F1',
 					lightblue: '#EEF2FF'
+				},
+				aptiv8: {
+					red: '#ea384c',
+					lightred: '#f4d3d7'
 				}
 			},
 			borderRadius: {

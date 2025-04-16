@@ -17,7 +17,13 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="font-bold text-xl text-gradient-blue-purple">FWApp</span>
+          <img 
+            src="/lovable-uploads/d29e4fbe-d629-4acf-a8d5-aaedf1599d44.png" 
+            alt="Aptiv8 Logo" 
+            className="h-10 w-auto" 
+            onClick={() => navigate('/')}
+            style={{ cursor: 'pointer' }}
+          />
         </div>
         
         <div className="flex items-center gap-3">

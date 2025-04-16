@@ -11,8 +11,8 @@ const TransactionsPage = () => {
       
       <div className="container mx-auto px-4 py-6">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center p-2 bg-fwapp-lightblue rounded-full mb-4">
-            <ShoppingBag className="h-6 w-6 text-fwapp-blue" />
+          <div className="inline-flex items-center justify-center p-2 bg-aptiv8-lightred rounded-full mb-4">
+            <ShoppingBag className="h-6 w-6 text-aptiv8-red" />
           </div>
           
           <h1 className="text-2xl md:text-3xl font-bold mb-2">Shop & Services</h1>

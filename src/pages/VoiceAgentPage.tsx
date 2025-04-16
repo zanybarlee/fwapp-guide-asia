@@ -18,8 +18,8 @@ const VoiceAgentPage = () => {
       
       <div className="container mx-auto px-4 py-6">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center p-2 bg-fwapp-lightblue rounded-full mb-4">
-            <Headphones className="h-6 w-6 text-fwapp-blue" />
+          <div className="inline-flex items-center justify-center p-2 bg-aptiv8-lightred rounded-full mb-4">
+            <Headphones className="h-6 w-6 text-aptiv8-red" />
           </div>
           
           <h1 className="text-2xl md:text-3xl font-bold mb-2">Voice Assistant</h1>
@@ -54,7 +54,7 @@ const VoiceAgentPage = () => {
           <div className="mt-6">
             <Button 
               onClick={toggleIframe} 
-              className="bg-fwapp-blue hover:bg-blue-700"
+              className="bg-aptiv8-red hover:bg-red-700 text-white"
             >
               {showIframe ? "Close Demo" : "Try Voice Agent"}
             </Button>
