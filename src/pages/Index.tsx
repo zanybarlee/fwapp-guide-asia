@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import DigitalAvatar from '@/components/DigitalAvatar';
@@ -7,21 +6,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { ChevronRight, Info, Languages, Users } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
 const Index = () => {
   const navigate = useNavigate();
-
-  return (
-    <div className="min-h-screen flex flex-col pb-16 md:pb-0">
+  return <div className="min-h-screen flex flex-col pb-16 md:pb-0">
       <Header />
       
       <main className="flex-1">
         <section className="py-6 md:py-12 bg-gradient-to-b from-aptiv8-lightred to-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-8">
-              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gradient-red">
-                Welcome to Aptiv8
-              </h1>
+              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gradient-red">Welcome to Aptiv8 FWApp</h1>
               <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                 Your all-in-one companion for foreign workers in Asia. Get assistance with jobs, 
                 accommodations, remittances, and more.
@@ -31,7 +25,7 @@ const Index = () => {
             <DigitalAvatar />
             
             <div className="mt-12 max-w-4xl mx-auto">
-              <h2 className="text-2xl font-semibold mb-6 text-center">Explore Aptiv8 Features</h2>
+              <h2 className="text-2xl font-semibold mb-6 text-center">Explore Aptiv8 FWApp Features</h2>
               
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="hover:shadow-md transition-all">
@@ -46,11 +40,10 @@ const Index = () => {
                     <p className="text-sm text-gray-600 mb-4">
                       Our friendly digital avatar guides you through Aptiv8 and answers your questions.
                     </p>
-                    <Button 
-                      variant="outline" 
-                      className="w-full text-aptiv8-red border-aptiv8-red hover:bg-aptiv8-lightred" 
-                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    >
+                    <Button variant="outline" className="w-full text-aptiv8-red border-aptiv8-red hover:bg-aptiv8-lightred" onClick={() => window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                  })}>
                       Try Now <ChevronRight className="h-4 w-4 ml-1" />
                     </Button>
                   </CardContent>
@@ -68,11 +61,7 @@ const Index = () => {
                     <p className="text-sm text-gray-600 mb-4">
                       Speak to our AI assistant in your native language for help with jobs, housing, and more.
                     </p>
-                    <Button 
-                      variant="outline" 
-                      className="w-full text-aptiv8-red border-aptiv8-red hover:bg-aptiv8-lightred"
-                      onClick={() => navigate('/voice-agent')}
-                    >
+                    <Button variant="outline" className="w-full text-aptiv8-red border-aptiv8-red hover:bg-aptiv8-lightred" onClick={() => navigate('/voice-agent')}>
                       Try Voice Agent <ChevronRight className="h-4 w-4 ml-1" />
                     </Button>
                   </CardContent>
@@ -90,11 +79,7 @@ const Index = () => {
                     <p className="text-sm text-gray-600 mb-4">
                       Top up your phone, purchase transit cards, and access other essential services.
                     </p>
-                    <Button 
-                      variant="outline" 
-                      className="w-full text-aptiv8-red border-aptiv8-red hover:bg-aptiv8-lightred"
-                      onClick={() => navigate('/transactions')}
-                    >
+                    <Button variant="outline" className="w-full text-aptiv8-red border-aptiv8-red hover:bg-aptiv8-lightred" onClick={() => navigate('/transactions')}>
                       Go to Shop <ChevronRight className="h-4 w-4 ml-1" />
                     </Button>
                   </CardContent>
@@ -176,8 +161,6 @@ const Index = () => {
           </Tabs>
         </section>
       </main>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
