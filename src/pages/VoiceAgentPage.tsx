@@ -68,6 +68,8 @@ const VoiceAgentPage = () => {
                 src="http://localhost:3005/" 
                 className="w-full h-full border-0" 
                 title="Voice Agent Demo"
+                allow="microphone; camera" 
+                sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"
               ></iframe>
             </div>
             <button 
