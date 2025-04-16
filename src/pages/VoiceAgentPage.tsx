@@ -1,10 +1,17 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '@/components/Header';
 import VoiceAgent from '@/components/VoiceAgent';
-import { Headphones, Languages, MessageSquare } from 'lucide-react';
+import { Headphones, Languages, MessageSquare, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const VoiceAgentPage = () => {
+  const [showIframe, setShowIframe] = useState(false);
+  
+  const toggleIframe = () => {
+    setShowIframe(!showIframe);
+  };
+
   return (
     <div className="min-h-screen flex flex-col pb-16 md:pb-0">
       <Header />
@@ -43,9 +50,36 @@ const VoiceAgentPage = () => {
               <span>မြန်မာ</span>
             </div>
           </div>
+          
+          <div className="mt-6">
+            <Button 
+              onClick={toggleIframe} 
+              className="bg-fwapp-blue hover:bg-blue-700"
+            >
+              {showIframe ? "Close Demo" : "Try Voice Agent"}
+            </Button>
+          </div>
         </div>
         
-        <VoiceAgent />
+        {showIframe ? (
+          <div className="relative w-full rounded-lg overflow-hidden border border-gray-200 shadow-lg mb-8">
+            <div className="aspect-video w-full bg-white">
+              <iframe 
+                src="http://localhost:3005/" 
+                className="w-full h-full border-0" 
+                title="Voice Agent Demo"
+              ></iframe>
+            </div>
+            <button 
+              onClick={toggleIframe}
+              className="absolute top-2 right-2 bg-white/80 p-2 rounded-full shadow-md hover:bg-white transition-colors"
+            >
+              <X className="h-5 w-5 text-gray-700" />
+            </button>
+          </div>
+        ) : (
+          <VoiceAgent />
+        )}
       </div>
     </div>
   );
