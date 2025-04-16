@@ -1,15 +1,18 @@
+
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Volume2, VolumeX, ExternalLink } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { useIsMobile } from '@/hooks/use-mobile';
+
 const DigitalAvatar: React.FC = () => {
   const [speaking, setSpeaking] = useState(false);
   const [muted, setMuted] = useState(false);
   const [greeting, setGreeting] = useState("Hey there, welcome to FWApp! I'm here to help you get started.");
   const [iframeError, setIframeError] = useState(true); // Set to true to always use the fallback UI
   const isMobile = useIsMobile();
+
   const startSpeaking = () => {
     if (muted) return;
     setSpeaking(true);
@@ -19,9 +22,15 @@ const DigitalAvatar: React.FC = () => {
       setSpeaking(false);
     }, 5000);
   };
+
   const toggleMute = () => {
     setMuted(!muted);
   };
+
+  const openNvidiaPage = () => {
+    window.open('https://build.nvidia.com/nvidia/digital-humans-for-customer-service', '_blank', 'noopener,noreferrer');
+  };
+
   useEffect(() => {
     // Auto start speaking when component mounts
     const timer = setTimeout(() => {
@@ -29,18 +38,27 @@ const DigitalAvatar: React.FC = () => {
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
-  return <div className="flex flex-col items-center justify-center p-6 max-w-3xl mx-auto">
-      {/* Always use the custom UI that works on both mobile and desktop */}
-      <div className="w-full aspect-video mb-6 rounded-lg overflow-hidden shadow-xl bg-gradient-blue-purple flex flex-col items-center justify-center text-white p-6 relative">
+
+  return (
+    <div className="flex flex-col items-center justify-center p-6 max-w-3xl mx-auto">
+      {/* Clickable image container */}
+      <div 
+        onClick={openNvidiaPage} 
+        className="w-full aspect-video mb-6 rounded-lg overflow-hidden shadow-xl cursor-pointer group relative"
+      >
         {/* Background image that fills the entire container */}
         <div className="absolute inset-0 w-full h-full">
-          <img src="/lovable-uploads/5eff63e3-9241-400a-9c0c-095c0e66704a.png" alt="Digital Human Background" className="w-full h-full object-cover opacity-80" />
-          {/* Semi-transparent overlay */}
-          <div className="absolute inset-0 bg-gradient-blue-purple opacity-0"></div>
+          <img 
+            src="/lovable-uploads/5eff63e3-9241-400a-9c0c-095c0e66704a.png" 
+            alt="Digital Human Background" 
+            className="w-full h-full object-cover" 
+          />
         </div>
         
-        {/* Content positioned on top of the background */}
-        
+        {/* Overlay with external link icon */}
+        <div className="absolute top-4 right-4 bg-white/80 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+          <ExternalLink className="h-6 w-6 text-fwapp-blue" />
+        </div>
       </div>
 
       <div className="bg-white shadow-blue rounded-lg p-4 mb-6 text-center w-full">
@@ -57,6 +75,9 @@ const DigitalAvatar: React.FC = () => {
           {muted ? "Unmute" : "Mute"}
         </Button>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default DigitalAvatar;
+
