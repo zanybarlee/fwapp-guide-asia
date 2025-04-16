@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Volume2, VolumeX, ExternalLink } from 'lucide-react';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const DigitalAvatar: React.FC = () => {
   const [speaking, setSpeaking] = useState(false);
@@ -38,14 +39,27 @@ const DigitalAvatar: React.FC = () => {
       {iframeError ? (
         // Fallback UI when iframe can't load
         <div className="w-full aspect-video mb-6 rounded-lg overflow-hidden shadow-xl bg-gradient-blue-purple flex flex-col items-center justify-center text-white p-6">
-          <motion.div
-            className="text-5xl mb-4"
-            animate={{ rotate: speaking ? [0, 5, -5, 0] : 0 }}
-            transition={{ repeat: speaking ? Infinity : 0, duration: 2 }}
-          >
-            👋
-          </motion.div>
-          <h2 className="text-2xl font-bold mb-3">Digital Human Assistant</h2>
+          <div className="flex flex-col items-center mb-4">
+            <motion.div
+              animate={{ scale: speaking ? [1, 1.05, 1] : 1 }}
+              transition={{ repeat: speaking ? Infinity : 0, duration: 2 }}
+              className="rounded-full overflow-hidden border-4 border-white/40 shadow-lg mb-4"
+              style={{ width: '180px', height: '180px' }}
+            >
+              <Avatar className="w-full h-full">
+                <AvatarImage 
+                  src="/lovable-uploads/5eff63e3-9241-400a-9c0c-095c0e66704a.png" 
+                  alt="Digital Human Assistant" 
+                  className="w-full h-full object-cover"
+                />
+                <AvatarFallback className="text-4xl">👩</AvatarFallback>
+              </Avatar>
+            </motion.div>
+            <h2 className="text-2xl font-bold mb-1">Digital Human Assistant</h2>
+            <p className="text-center text-white/80 text-sm mb-4">
+              Your personal FWApp guide
+            </p>
+          </div>
           <p className="text-center mb-4">
             Due to security restrictions, we can't embed the NVIDIA Digital Human demo directly.
           </p>
