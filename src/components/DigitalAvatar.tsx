@@ -66,11 +66,19 @@ const DigitalAvatar: React.FC = () => {
       </div>
 
       <div className="flex gap-4">
-        <Button onClick={startSpeaking} disabled={speaking} className="bg-fwapp-blue hover:bg-blue-700">
+        <Button 
+          onClick={startSpeaking} 
+          disabled={speaking} 
+          className="bg-aptiv8-red hover:bg-aptiv8-red/90"
+        >
           Greet Me
         </Button>
         
-        <Button variant="outline" onClick={toggleMute} className="border-fwapp-blue text-fwapp-blue hover:bg-fwapp-lightblue">
+        <Button 
+          variant="outline" 
+          onClick={toggleMute} 
+          className="border-aptiv8-red text-aptiv8-red hover:bg-aptiv8-lightred"
+        >
           {muted ? <VolumeX className="mr-2 h-4 w-4" /> : <Volume2 className="mr-2 h-4 w-4" />}
           {muted ? "Unmute" : "Mute"}
         </Button>
