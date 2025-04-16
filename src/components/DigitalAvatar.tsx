@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -38,11 +39,16 @@ const DigitalAvatar: React.FC = () => {
       {iframeError ? (
         // Fallback UI when iframe can't load
         <div className="w-full aspect-video mb-6 rounded-lg overflow-hidden shadow-xl bg-gradient-blue-purple relative">
-          <AvatarImage 
-            src="/lovable-uploads/f759bff1-e9d8-440b-b251-b21ac362622f.png" 
-            alt="Digital Human Assistant" 
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          <Avatar className="w-full h-full">
+            <AvatarImage 
+              src="/lovable-uploads/f759bff1-e9d8-440b-b251-b21ac362622f.png" 
+              alt="Digital Human Assistant" 
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <AvatarFallback className="absolute inset-0 bg-gradient-blue-purple flex items-center justify-center">
+              <span className="text-4xl">👩</span>
+            </AvatarFallback>
+          </Avatar>
           <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white p-6">
             <h2 className="text-2xl font-bold mb-1 relative z-10">Digital Human Assistant</h2>
             <p className="text-center text-white/80 text-sm mb-4 relative z-10">
